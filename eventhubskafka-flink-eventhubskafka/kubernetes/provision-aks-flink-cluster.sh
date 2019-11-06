@@ -94,6 +94,7 @@ helm upgrade --install --recreate-pods "$release_name" helm/flink-standalone \
   --set flink.secrets.KAFKA_IN_LISTEN_JAAS_CONFIG="$KAFKA_IN_LISTEN_JAAS_CONFIG" \
   --set flink.secrets.KAFKA_OUT_SEND_JAAS_CONFIG="$KAFKA_OUT_SEND_JAAS_CONFIG" \
   --set flink.secrets.APPINSIGHTS_INSTRUMENTATIONKEY="$APPINSIGHTS_INSTRUMENTATIONKEY" \
+  --set flink.secrets.KAFKA_OUT_LISTEN_JAAS_CONFIG="$KAFKA_OUT_LISTEN_JAAS_CONFIG" \
   --set resources.jobmanager.args="{--parallelism , $FLINK_PARALLELISM , $2}"
 
 echo "To get the Flink Job manager UI, run:"
